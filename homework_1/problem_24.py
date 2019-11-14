@@ -46,14 +46,17 @@ def calculate_term(first, term_number):
 
 first = int(input())
 result = converges(first)
-print(f'When lambda is {first} the series converges to: {result}')
 
-if result == None or math.inf or -math.inf:
-    pass
+print(result)
+
+if result == None or result == math.inf or result == -math.inf:
+    print(f'When lambda is {first} the series does not converge.')
+    exit()
+
+print(f'When lambda is {first} the series converges to: {result}\n')
 
 print('Please enter 5 indexes to calculate the series at:')
 
 for i in range(0, index_count):
-    print(f'index {i + 1}:')
     index = int(input())
     print(f'series term at {index} is {calculate_term(first, index)}')
